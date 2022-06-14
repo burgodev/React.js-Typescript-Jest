@@ -4,11 +4,11 @@ import { withStyles } from "@material-ui/core";
 import { Header, Footer, FoodList, Profile } from "./components";
 import api from "./services/api";
 
-interface IApp {
+interface IAppComponent {
   classes: any;
 }
 
-const App = ({ classes }: IApp) => {
+const App = ({ classes }: IAppComponent) => {
   const getData = useCallback(async () => {
     try {
       const response = await api.get("/");
