@@ -11,7 +11,7 @@ interface IApp {
 const App = ({ classes }: IApp) => {
   const getData = useCallback(async () => {
     try {
-      const response = await api.get("/profile");
+      const response = await api.get("/");
       console.log(response);
     } catch (error) {
       console.log(error);

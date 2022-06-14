@@ -59,7 +59,11 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
             <Typography className={classes.title} data-testid="title">
               {title}
             </Typography>
-            <Typography paragraph data-testid="description">
+            <Typography
+              paragraph
+              data-testid="description"
+              className={classes.description}
+            >
               {description}
             </Typography>
           </Grid>
@@ -69,24 +73,42 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
   );
 };
 
-export default withStyles((theme) => ({
-  image: {
-    height: "10rem",
-    width: "10rem",
-    margin: "1rem 0",
-  },
-  grid: {
-    width: "75%",
-    margin: "0.5rem 0",
-  },
-  title: {
-    fontSize: "1.5rem",
-  },
-  gridImage: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  loading: {
-    margin: "auto",
-  },
-}))(FoodList);
+export default withStyles(
+  (theme: {
+    breakpoints: { only: (arg0: string) => any; down: (arg0: string) => any };
+  }) => ({
+    image: {
+      height: "10rem",
+      width: "10rem",
+      margin: "1rem 0",
+    },
+    grid: {
+      width: "50%",
+      margin: "0.5rem 0",
+      [theme.breakpoints.only("lg")]: {
+        width: "60%",
+      },
+      [theme.breakpoints.down("md")]: {
+        width: "75%",
+      },
+    },
+    title: {
+      fontSize: "1.5rem",
+      [theme.breakpoints.only("xs")]: {
+        textAlign: "center",
+      },
+    },
+    gridImage: {
+      display: "flex",
+      justifyContent: "center",
+    },
+    loading: {
+      margin: "auto",
+    },
+    description: {
+      [theme.breakpoints.only("xs")]: {
+        textAlign: "center",
+      },
+    },
+  })
+)(FoodList);
