@@ -90,7 +90,7 @@ export default withStyles((theme: Theme) => ({
   },
   title: {
     fontSize: "1.5rem",
-    [theme.breakpoints.only("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       textAlign: "center",
     },
   },
@@ -102,7 +102,7 @@ export default withStyles((theme: Theme) => ({
     margin: "auto",
   },
   description: {
-    [theme.breakpoints.only("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       textAlign: "center",
     },
   },
