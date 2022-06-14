@@ -25,7 +25,7 @@ const Profile = ({ classes, profileData }: IProfileComponent) => {
     } catch (error) {
       console.log(error);
     } finally {
-      setTimeout(() => setLoading(false), 750);
+      setLoading(false);
     }
   }, []);
 
@@ -34,7 +34,6 @@ const Profile = ({ classes, profileData }: IProfileComponent) => {
   }, [getData]);
 
   console.log(loading);
-
   // if (loading) return <Typography>loading...</Typography>;
 
   return (
@@ -61,7 +60,7 @@ const defaultData: IProfile = {
   image: "",
 };
 
-export default withStyles((theme) => ({
+export default withStyles(() => ({
   avatar: {
     height: "10rem",
     width: "10rem",

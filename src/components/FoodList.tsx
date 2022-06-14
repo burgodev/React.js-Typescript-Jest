@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { withStyles, Avatar, Typography, Grid } from "@material-ui/core";
+import { withStyles, Avatar, Typography, Grid, Theme } from "@material-ui/core";
 
 import api from "../services/api";
 
@@ -26,7 +26,7 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
     } catch (error) {
       console.log(error);
     } finally {
-      setTimeout(() => setLoading(false), 1000);
+      setLoading(false);
     }
   }, []);
 
@@ -35,7 +35,6 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
   }, [getData]);
 
   console.log(loading);
-
   // if (loading)
   //   return (
   //     <Typography variant="h5" className={classes.loading}>
@@ -73,42 +72,38 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
   );
 };
 
-export default withStyles(
-  (theme: {
-    breakpoints: { only: (arg0: string) => any; down: (arg0: string) => any };
-  }) => ({
-    image: {
-      height: "10rem",
-      width: "10rem",
-      margin: "1rem 0",
+export default withStyles((theme: Theme) => ({
+  image: {
+    height: "10rem",
+    width: "10rem",
+    margin: "1rem 0",
+  },
+  grid: {
+    width: "50%",
+    margin: "0.5rem 0",
+    [theme.breakpoints.only("lg")]: {
+      width: "60%",
     },
-    grid: {
-      width: "50%",
-      margin: "0.5rem 0",
-      [theme.breakpoints.only("lg")]: {
-        width: "60%",
-      },
-      [theme.breakpoints.down("md")]: {
-        width: "75%",
-      },
+    [theme.breakpoints.down("md")]: {
+      width: "75%",
     },
-    title: {
-      fontSize: "1.5rem",
-      [theme.breakpoints.only("xs")]: {
-        textAlign: "center",
-      },
+  },
+  title: {
+    fontSize: "1.5rem",
+    [theme.breakpoints.only("xs")]: {
+      textAlign: "center",
     },
-    gridImage: {
-      display: "flex",
-      justifyContent: "center",
+  },
+  gridImage: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  loading: {
+    margin: "auto",
+  },
+  description: {
+    [theme.breakpoints.only("xs")]: {
+      textAlign: "center",
     },
-    loading: {
-      margin: "auto",
-    },
-    description: {
-      [theme.breakpoints.only("xs")]: {
-        textAlign: "center",
-      },
-    },
-  })
-)(FoodList);
+  },
+}))(FoodList);

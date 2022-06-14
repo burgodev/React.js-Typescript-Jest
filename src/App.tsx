@@ -34,7 +34,7 @@ const App = ({ classes }: IApp) => {
   );
 };
 
-export default withStyles((theme) => ({
+export default withStyles(() => ({
   app: {
     display: "flex",
     flexDirection: "column",

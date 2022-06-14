@@ -9,10 +9,6 @@ describe("FoodList Component", () => {
     });
 
     expect(screen.getAllByTestId("image")[0]).toBeInTheDocument();
-    // setTimeout(
-    //   () => expect(screen.getAllByTestId("image")[0]).toBeInTheDocument(),
-    //   1000
-    // );
   });
 
   it("should have a title", async () => {
@@ -20,20 +16,12 @@ describe("FoodList Component", () => {
       render(<FoodList list={MOCKUP} />);
     });
     expect(screen.getAllByTestId("title")[0]).toBeInTheDocument();
-    // setTimeout(
-    //   () => expect(screen.getAllByTestId("title")[0]).toBeInTheDocument(),
-    //   1000
-    // );
   });
   it("should have a description", async () => {
     act(() => {
       render(<FoodList list={MOCKUP} />);
     });
     expect(screen.getAllByTestId("description")[0]).toBeInTheDocument();
-    // setTimeout(
-    //   () => expect(screen.getAllByTestId("description")[0]).toBeInTheDocument(),
-    //   1000
-    // );
   });
 });
 
