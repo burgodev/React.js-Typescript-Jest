@@ -15,6 +15,6 @@ it("should render header component", () => {
 
 it("should render footer component", () => {
   const { getByTestId } = render(<App />);
-  const header = getByTestId("footer");
-  expect(header).toBeInTheDocument();
+  const footer = getByTestId("footer");
+  expect(footer).toBeInTheDocument();
 });

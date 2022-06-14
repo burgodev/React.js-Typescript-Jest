@@ -5,8 +5,8 @@ const styles = {
   root: {},
 };
 
-const Header: React.FC = (props) => (
-  <header {...props}>
+const Header: React.FC = () => (
+  <header data-testid="header">
     <Typography data-testid="typography">My Header</Typography>
   </header>
 );

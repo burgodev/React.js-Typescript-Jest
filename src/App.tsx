@@ -24,12 +24,12 @@ const App = ({ classes }: IAppComponent) => {
 
   return (
     <div className={classes.app}>
-      <Header data-testid="header" />
+      <Header />
       <main className={classes.container} data-testid="main">
         <Profile />
         <FoodList />
       </main>
-      <Footer data-testid="footer" />
+      <Footer />
     </div>
   );
 };

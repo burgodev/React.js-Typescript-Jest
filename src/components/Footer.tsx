@@ -5,9 +5,9 @@ const styles = {
   root: {},
 };
 
-const Footer: React.FC = (props) => {
+const Footer: React.FC = () => {
   return (
-    <footer {...props}>
+    <footer data-testid="footer">
       <Typography data-testid="typography">
         Copyright. All rights reserved
       </Typography>
