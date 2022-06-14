@@ -34,7 +34,7 @@ const Profile = ({ classes, profileData }: IProfileComponent) => {
   }, [getData]);
 
   console.log(loading);
-  // if (loading) return <Typography>loading...</Typography>;
+  if (loading) return <Typography>loading...</Typography>;
 
   return (
     <>

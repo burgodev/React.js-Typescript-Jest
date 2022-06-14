@@ -35,12 +35,12 @@ const FoodList = ({ classes, list }: IFoodListComponent) => {
   }, [getData]);
 
   console.log(loading);
-  // if (loading)
-  //   return (
-  //     <Typography variant="h5" className={classes.loading}>
-  //       loading...
-  //     </Typography>
-  //   );
+  if (loading)
+    return (
+      <Typography variant="h5" className={classes.loading}>
+        loading...
+      </Typography>
+    );
 
   return (
     <>
