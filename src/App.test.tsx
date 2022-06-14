@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import App from "./App";
 
-it("should render main content", () => {
+it("should render main component", () => {
   const { getByTestId } = render(<App />);
   const main = getByTestId("main");
   expect(main).toBeInTheDocument();
